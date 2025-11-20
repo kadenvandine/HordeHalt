@@ -7,6 +7,7 @@ var enemy_path: Path3D
 var target: PathFollow3D
 
 @onready var barrel: MeshInstance3D = $TurretBase/TurretTop/Visor/Barrel
+@onready var animation_player = $AnimationPlayer
 
 func _physics_process(delta: float) -> void:
 	target = find_best_target()
@@ -19,6 +20,7 @@ func _on_timer_timeout():
 		add_child(shot)
 		shot.global_position = barrel.global_position
 		shot.direction = global_transform.basis.z
+		animation_player.play("fire")
 
 func find_best_target() -> PathFollow3D:
 	var best_target = null

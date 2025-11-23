@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var max_health: int = 5
+@export var defeat_layer: CanvasLayer
 
 var current_health: int:
 	set(health_in):
@@ -10,7 +11,11 @@ var current_health: int:
 		var white: Color = Color.WHITE
 		label_3d.modulate = red.lerp(white, float(current_health)/float(max_health))
 		if current_health < 1:
-			get_tree().reload_current_scene()
+			if is_instance_valid(defeat_layer):
+				defeat_layer.defeat()
+			else:
+				print("DefeatLayer node not assigned to base.gd in the Inspector!")
+				get_tree().reload_current_scene()
 
 @onready var label_3d: Label3D = $Label3D
 
@@ -19,3 +24,4 @@ func _ready() -> void:
 
 func take_damage() -> void:
 	current_health -= 1
+

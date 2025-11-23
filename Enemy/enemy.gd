@@ -19,6 +19,7 @@ var current_health: int:
 
 func _ready() -> void:
 	current_health = max_health
+	Engine.time_scale = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,3 +27,4 @@ func _process(delta: float) -> void:
 	if progress_ratio == 1.0:
 		base.take_damage()
 		set_process(false)
+		queue_free()

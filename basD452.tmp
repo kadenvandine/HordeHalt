@@ -79,7 +79,7 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
-path_local = true
+path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
@@ -92,7 +92,7 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
-path_local = true
+path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
@@ -105,7 +105,7 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
-path_local = true
+path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
@@ -144,4 +144,3 @@ label_settings = SubResource("LabelSettings_gghht")
 [node name="DifficultyManager" parent="." instance=ExtResource("9_fmh2w")]
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
-[connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]

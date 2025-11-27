@@ -67,6 +67,8 @@ material = SubResource("StandardMaterial3D_8y3r6")
 [node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("1_4fr0t")]
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../TurretManager")
+turret_scene = ExtResource("6_dkexh")
+turret_quick_scene = ExtResource("8_nuyta")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_svbj1")
@@ -169,3 +171,6 @@ visible = false
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
 [connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]
+[connection signal="pressed" from="GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret" to="RayPickerCamera" method="_on_build_turret_pressed"]
+
+[editable path="GameLayer"]

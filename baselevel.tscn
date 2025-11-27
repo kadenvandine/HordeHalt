@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dsg6g6n7odkku"]
+[gd_scene load_steps=28 format=3 uid="uid://dsg6g6n7odkku"]
 
 [ext_resource type="PackedScene" uid="uid://d1jgdbq8ej5d1" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_4fr0t"]
 [ext_resource type="MeshLibrary" uid="uid://rqrf7vkd782s" path="res://MeshLibraries/SpaceLibrary.tres" id="1_svbj1"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://dajjkhsantum" path="res://DifficultyManager/UserInterface/victory_layer.tscn" id="10_cnq5y"]
 [ext_resource type="PackedScene" uid="uid://crpw67q5yagc1" path="res://DifficultyManager/UserInterface/defeat_layer.tscn" id="12_uijrt"]
 [ext_resource type="PackedScene" uid="uid://djwfvcb6uw1ol" path="res://DifficultyManager/UserInterface/game_layer.tscn" id="14_6hptv"]
+[ext_resource type="Curve" uid="uid://qhbwar442xla" path="res://difficulty_spawn_normal.tres" id="14_gk4tx"]
+[ext_resource type="Curve" uid="uid://bc00tvdyp3squ" path="res://difficulty_health_normal.tres" id="15_d2aec"]
+[ext_resource type="Script" path="res://GameSettings.gd" id="17_lnkyr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3corq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -165,6 +168,8 @@ label_settings = SubResource("LabelSettings_gghht")
 
 [node name="DifficultyManager" parent="." instance=ExtResource("9_fmh2w")]
 game_length = 180.0
+spawn_time_curve = ExtResource("14_gk4tx")
+enemy_health_curve = ExtResource("15_d2aec")
 
 [node name="VictoryLayer" parent="." instance=ExtResource("10_cnq5y")]
 visible = false
@@ -172,6 +177,9 @@ visible = false
 [node name="DefeatLayer" parent="." instance=ExtResource("12_uijrt")]
 
 [node name="GameLayer" parent="." instance=ExtResource("14_6hptv")]
+
+[node name="GameSettings" type="Node" parent="."]
+script = ExtResource("17_lnkyr")
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
 [connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]

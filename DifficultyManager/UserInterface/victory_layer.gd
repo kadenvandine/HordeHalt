@@ -19,6 +19,7 @@ func victory() -> void:
 	if base.max_health == base.current_health:
 		star_2.modulate = Color.WHITE
 		health_label.visible = true
+		failed_health_label.visible = false
 	if bank.gold >= 500:
 		star_3.modulate = Color.WHITE
 		gold_label.visible = true

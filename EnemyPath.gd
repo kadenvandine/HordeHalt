@@ -7,7 +7,11 @@ extends Path3D
 
 func spawn_enemy() -> void:
 	var new_enemy = enemy_scene.instantiate()
-	new_enemy.max_health = difficulty_manager.get_enemy_health()
+	var current_health = difficulty_manager.get_enemy_health()
+	var current_speed = difficulty_manager.get_enemy_speed()
+	new_enemy.max_health = current_health
+	new_enemy.current_health = current_health
+	new_enemy.speed = current_speed
 	add_child(new_enemy)
 	timer.wait_time = difficulty_manager.get_spawn_time()
 	print(new_enemy.current_health)

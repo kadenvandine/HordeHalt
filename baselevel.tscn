@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dsg6g6n7odkku"]
+[gd_scene load_steps=26 format=3 uid="uid://dsg6g6n7odkku"]
 
 [ext_resource type="PackedScene" uid="uid://d1jgdbq8ej5d1" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_4fr0t"]
 [ext_resource type="MeshLibrary" uid="uid://rqrf7vkd782s" path="res://MeshLibraries/SpaceLibrary.tres" id="1_svbj1"]
@@ -16,8 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dajjkhsantum" path="res://DifficultyManager/UserInterface/victory_layer.tscn" id="10_cnq5y"]
 [ext_resource type="PackedScene" uid="uid://crpw67q5yagc1" path="res://DifficultyManager/UserInterface/defeat_layer.tscn" id="12_uijrt"]
 [ext_resource type="PackedScene" uid="uid://djwfvcb6uw1ol" path="res://DifficultyManager/UserInterface/game_layer.tscn" id="14_6hptv"]
-[ext_resource type="Curve" uid="uid://qhbwar442xla" path="res://difficulty_spawn_normal.tres" id="14_gk4tx"]
-[ext_resource type="Curve" uid="uid://bc00tvdyp3squ" path="res://difficulty_health_normal.tres" id="15_d2aec"]
 [ext_resource type="Script" path="res://GameSettings.gd" id="17_lnkyr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3corq"]
@@ -168,8 +166,6 @@ label_settings = SubResource("LabelSettings_gghht")
 
 [node name="DifficultyManager" parent="." instance=ExtResource("9_fmh2w")]
 game_length = 180.0
-spawn_time_curve = ExtResource("14_gk4tx")
-enemy_health_curve = ExtResource("15_d2aec")
 
 [node name="VictoryLayer" parent="." instance=ExtResource("10_cnq5y")]
 visible = false

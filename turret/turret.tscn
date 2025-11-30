@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci0tkpy016cyt"]
+[gd_scene load_steps=9 format=3 uid="uid://ci0tkpy016cyt"]
 
 [ext_resource type="Script" path="res://turret/turret.gd" id="1_2r36l"]
 [ext_resource type="PackedScene" uid="uid://bya01e7nmqedt" path="res://turret/projectile.tscn" id="1_xydhu"]
 [ext_resource type="PackedScene" uid="uid://dlhby46imux54" path="res://Assets/Cannon.glb" id="3_km1eq"]
 [ext_resource type="PackedScene" uid="uid://db6qwwmrc7jbo" path="res://Assets/TurretBase.glb" id="4_37qln"]
+[ext_resource type="AudioStream" uid="uid://b1lqunsb5sqju" path="res://Assets/audio/441373__lilmati__heavy-artillery-shot.wav" id="5_tdpqc"]
 
 [sub_resource type="Animation" id="Animation_83qd5"]
 length = 0.001
@@ -64,5 +65,8 @@ libraries = {
 }
 
 [node name="TurretBase2" parent="." instance=ExtResource("4_37qln")]
+
+[node name="ShootSnd" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_tdpqc")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

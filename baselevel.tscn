@@ -178,21 +178,30 @@ visible = false
 
 [node name="DefeatLayer" parent="." instance=ExtResource("12_uijrt")]
 
-[node name="GameLayer" parent="." instance=ExtResource("14_6hptv")]
+[node name="GameLayer" parent="." node_paths=PackedStringArray("turret_button", "quickfire_turret_button") instance=ExtResource("14_6hptv")]
 process_mode = 3
+turret_button = NodePath("MarginContainer/PanelContainer/HBoxContainer/Turret")
+quickfire_turret_button = NodePath("MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret")
 
 [node name="GameSettings" type="Node" parent="."]
 script = ExtResource("17_lnkyr")
 
-[node name="TutorialLayer" parent="." node_paths=PackedStringArray("ray_picker_camera", "build_turret_button") instance=ExtResource("18_u3sip")]
+[node name="TutorialLayer" parent="." node_paths=PackedStringArray("ray_picker_camera", "build_turret_button", "quick_turret_button") instance=ExtResource("18_u3sip")]
 ray_picker_camera = NodePath("../RayPickerCamera")
 build_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret")
+quick_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret")
 
-[node name="MainMenu" parent="." instance=ExtResource("20_xr7dw")]
+[node name="MainMenu" parent="." node_paths=PackedStringArray("turret_button", "quick_turret_button") instance=ExtResource("20_xr7dw")]
+turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret")
+quick_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret")
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
 [connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]
+[connection signal="mouse_entered" from="GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret" to="GameLayer" method="_on_turret_mouse_entered"]
+[connection signal="mouse_exited" from="GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret" to="GameLayer" method="_on_mouse_exited"]
 [connection signal="pressed" from="GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret" to="RayPickerCamera" method="_on_build_turret_pressed"]
+[connection signal="mouse_entered" from="GameLayer/MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret" to="GameLayer" method="_on_quickfire_turret_mouse_entered"]
+[connection signal="mouse_exited" from="GameLayer/MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret" to="GameLayer" method="_on_mouse_exited"]
 [connection signal="pressed" from="GameLayer/MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret" to="RayPickerCamera" method="_on_build_turret_quick_pressed"]
 
 [editable path="GameLayer"]

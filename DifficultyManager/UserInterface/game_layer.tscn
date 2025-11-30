@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://djwfvcb6uw1ol"]
+[gd_scene load_steps=4 format=3 uid="uid://djwfvcb6uw1ol"]
 
+[ext_resource type="Script" path="res://DifficultyManager/UserInterface/game_layer.gd" id="1_38rd5"]
 [ext_resource type="Texture2D" uid="uid://bq5v2q5pgsdan" path="res://Assets/Turret.png" id="1_wwwkl"]
 [ext_resource type="Texture2D" uid="uid://b25qx6vpxp1qv" path="res://Assets/QuickTurret.png" id="2_ttsd3"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="GameLayer" type="CanvasLayer"]
+script = ExtResource("1_38rd5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 11
@@ -44,3 +46,12 @@ icon = ExtResource("2_ttsd3")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="StatsTooltip" type="PanelContainer" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="StatsLabel" type="Label" parent="StatsTooltip"]
+layout_mode = 2

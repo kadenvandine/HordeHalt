@@ -16,6 +16,9 @@ var _ghost_turret: Node3D = null
 
 @onready var ray_cast_3d = $RayCast3D
 @onready var bank = get_tree().get_first_node_in_group("bank")
+@onready var quick_turret_place_snd = $QuickTurretPlaceSnd
+@onready var normal_turret_place_snd = $NormalTurretPlaceSnd
+
 
 var selected_turret_type: String = ""
 
@@ -62,9 +65,11 @@ func _process(delta):
 				
 				if selected_turret_type == "normal":
 					turret_manager.build_turret(tile_position)
+					normal_turret_place_snd.play()
 					turret_placed.emit()
 				elif selected_turret_type == "quick":
 					turret_manager.build_turret_quick(tile_position)
+					quick_turret_place_snd.play()
 					turret_placed.emit()
 		
 		else:

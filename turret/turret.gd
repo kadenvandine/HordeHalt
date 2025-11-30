@@ -10,6 +10,7 @@ var target: PathFollow3D
 @onready var animation_player = $AnimationPlayer
 @onready var cannon = $TurretBase/TurretTop/Cannon
 @onready var turret_base = $TurretBase
+@onready var shoot_snd = $ShootSnd
 
 func _physics_process(delta: float) -> void:
 	target = find_best_target()
@@ -24,6 +25,7 @@ func _on_timer_timeout():
 		shot.global_position = cannon.global_position
 		shot.direction = turret_base.global_transform.basis.z
 		animation_player.play("fire")
+		shoot_snd.play()
 
 func find_best_target() -> PathFollow3D:
 	#If enemy path hasn't been set yet, don't try to loop

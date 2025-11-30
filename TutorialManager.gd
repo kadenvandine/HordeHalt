@@ -21,6 +21,7 @@ var current_state = State.INACTIVE
 # --- Game Node References ---
 @export var ray_picker_camera: Camera3D
 @export var build_turret_button: Button
+@export var quick_turret_button: Button
 
 func _ready():
 	visible = false
@@ -67,11 +68,19 @@ func set_state(new_state: State):
 	highlight_arrow.visible = false
 	skip_tutorial_check.visible = false # <-- Hide by default
 	next_button.text = "Next"
+	if is_instance_valid(build_turret_button):
+		build_turret_button.disabled = true
+	if is_instance_valid(quick_turret_button):
+		quick_turret_button.disabled = true
 
 	match new_state:
 		State.INACTIVE:
 			visible = false
 			get_tree().paused = false
+			if is_instance_valid(build_turret_button):
+				build_turret_button.disabled = true
+			if is_instance_valid(quick_turret_button):
+				quick_turret_button.disabled = true
 			
 		State.STEP_1_ENEMY_INTRO:
 			tutorial_text.text = "Here come the barbarians! Your base is under attack. You must defend it!"
@@ -80,6 +89,10 @@ func set_state(new_state: State):
 			tutorial_text.text = "Let's build a turret. Click the 'Turret' button in the top right."
 			next_button.visible = false
 			_point_arrow_at(build_turret_button)
+			if is_instance_valid(build_turret_button):
+				build_turret_button.disabled = false
+			if is_instance_valid(quick_turret_button):
+				quick_turret_button.disabled = false
 			
 		State.STEP_3_TURRET_PLACE:
 			tutorial_text.text = "Great! Now left-click on an empty green tile to place your turret."

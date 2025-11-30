@@ -1,5 +1,8 @@
 extends Camera3D
 
+signal turret_button_pressed
+signal turret_placed
+
 @export var gridmap: GridMap
 @export var turret_manager: Node3D
 @export var turret_cost := 100
@@ -59,8 +62,10 @@ func _process(delta):
 				
 				if selected_turret_type == "normal":
 					turret_manager.build_turret(tile_position)
+					turret_placed.emit()
 				elif selected_turret_type == "quick":
 					turret_manager.build_turret_quick(tile_position)
+					turret_placed.emit()
 		
 		else:
 			_set_ghost_material(_ghost_turret, ghost_material_cannot_build)
@@ -68,11 +73,13 @@ func _process(delta):
 func _on_build_turret_pressed():
 	selected_turret_type = "normal"
 	spawn_ghost_turret(turret_scene)
+	turret_button_pressed.emit()
 	
 	
 func _on_build_turret_quick_pressed():
 	selected_turret_type = "quick"
 	spawn_ghost_turret(turret_quick_scene)
+	turret_button_pressed.emit()
 	
 	
 func spawn_ghost_turret(scene: PackedScene):

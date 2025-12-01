@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Barbarian Blaster"
+config/name="Horde Halt"
+config/description="Ugh, more barbarians? Teach these party crashers some manners with strategically placed turrets and a whole lot of 'NOPE.' You're the bouncer, and these guys are not on the list."
 run/main_scene="res://baselevel.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/image="res://shadowninjagames.png"
-config/icon="res://icon.svg"
+config/icon="res://Assets/QuickTurret.png"
 boot_splash/minimum_display_time=3000
 
 [autoload]
@@ -46,4 +47,5 @@ pause={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/msaa_3d=2

@@ -42,7 +42,7 @@ theme_override_colors/font_outline_color = Color(0.341176, 0.121569, 0.827451, 1
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_1m5q0")
 theme_override_font_sizes/font_size = 48
-text = "Barbarian Blaster"
+text = "Horde Halt"
 horizontal_alignment = 1
 
 [node name="SubtitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]

@@ -53,6 +53,7 @@ We'd love to have your help! If you'd like to contribute, please feel free to fo
 
 * **[Kaden VanDine]** - Lead Developer
 * **[Artist / Musician Name]** - Art / Music
+  * Backup 6-22-07.wav by DJvTripin -- https://freesound.org/s/36542/ -- License: Sampling+
 * **[Asset Source]** - "Some assets from [Kenney.nl](https://kenney.nl)"
 
 ## ⚖️ License

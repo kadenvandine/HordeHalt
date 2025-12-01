@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://i648ohh101ww"
 path.s3tc="res://.godot/imported/Barbarian_castle-colour-palette.png-9d80abc6ac03ea58b9fbe8ba6a020f05.s3tc.ctex"
+path.etc2="res://.godot/imported/Barbarian_castle-colour-palette.png-9d80abc6ac03ea58b9fbe8ba6a020f05.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Barbarian_castle-colour-palette.png"
-dest_files=["res://.godot/imported/Barbarian_castle-colour-palette.png-9d80abc6ac03ea58b9fbe8ba6a020f05.s3tc.ctex"]
+dest_files=["res://.godot/imported/Barbarian_castle-colour-palette.png-9d80abc6ac03ea58b9fbe8ba6a020f05.s3tc.ctex", "res://.godot/imported/Barbarian_castle-colour-palette.png-9d80abc6ac03ea58b9fbe8ba6a020f05.etc2.ctex"]
 
 [params]
 

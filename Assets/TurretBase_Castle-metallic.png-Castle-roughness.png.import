@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c51tsda8566ps"
 path.s3tc="res://.godot/imported/TurretBase_Castle-metallic.png-Castle-roughness.png-9f4896acf12918aab07ffebb245d23be.s3tc.ctex"
+path.etc2="res://.godot/imported/TurretBase_Castle-metallic.png-Castle-roughness.png-9f4896acf12918aab07ffebb245d23be.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/TurretBase_Castle-metallic.png-Castle-roughness.png"
-dest_files=["res://.godot/imported/TurretBase_Castle-metallic.png-Castle-roughness.png-9f4896acf12918aab07ffebb245d23be.s3tc.ctex"]
+dest_files=["res://.godot/imported/TurretBase_Castle-metallic.png-Castle-roughness.png-9f4896acf12918aab07ffebb245d23be.s3tc.ctex", "res://.godot/imported/TurretBase_Castle-metallic.png-Castle-roughness.png-9f4896acf12918aab07ffebb245d23be.etc2.ctex"]
 
 [params]
 

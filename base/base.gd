@@ -24,4 +24,3 @@ func _ready() -> void:
 
 func take_damage() -> void:
 	current_health -= 1
-

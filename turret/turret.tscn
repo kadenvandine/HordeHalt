@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ci0tkpy016cyt"]
 
-[ext_resource type="Script" path="res://turret/turret.gd" id="1_2r36l"]
+[ext_resource type="Script" uid="uid://ygr6jd8g8a03" path="res://turret/turret.gd" id="1_2r36l"]
 [ext_resource type="PackedScene" uid="uid://bya01e7nmqedt" path="res://turret/projectile.tscn" id="1_xydhu"]
 [ext_resource type="PackedScene" uid="uid://dlhby46imux54" path="res://Assets/Cannon.glb" id="3_km1eq"]
 [ext_resource type="PackedScene" uid="uid://db6qwwmrc7jbo" path="res://Assets/TurretBase.glb" id="4_37qln"]
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4yfqt"]
 _data = {
-"RESET": SubResource("Animation_83qd5"),
-"fire": SubResource("Animation_jlbdq")
+&"RESET": SubResource("Animation_83qd5"),
+&"fire": SubResource("Animation_jlbdq")
 }
 
 [node name="Turret" type="Node3D"]
@@ -61,7 +61,7 @@ autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4yfqt")
+&"": SubResource("AnimationLibrary_4yfqt")
 }
 
 [node name="TurretBase2" parent="." instance=ExtResource("4_37qln")]

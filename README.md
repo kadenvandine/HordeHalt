@@ -32,7 +32,7 @@ You can download the latest playable builds for Windows and Linux from the [**Gi
 If you want to run the game from the source code, you'll need the Godot Engine.
 
 **1. Prerequisites:**
-* **Godot Engine (v4.1 or later)**
+* **Godot Engine (v4.5 or later)**
 
 **2. Installation:**
 1.  Clone this repository:
@@ -53,6 +53,7 @@ We'd love to have your help! If you'd like to contribute, please feel free to fo
 
 * **[Kaden VanDine]** - Lead Developer
 * **[Artist / Musician Name]** - Art / Music
+  * Backup 6-22-07.wav by DJvTripin -- https://freesound.org/s/36542/ -- License: Sampling+
 * **[Asset Source]** - "Some assets from [Kenney.nl](https://kenney.nl)"
 
 ## ⚖️ License

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bckvyx61hopup"]
 
-[ext_resource type="Script" path="res://SubViewportContainer.gd" id="1_lwpc0"]
+[ext_resource type="Script" uid="uid://c6be21gfs0ust" path="res://SubViewportContainer.gd" id="1_lwpc0"]
 [ext_resource type="PackedScene" uid="uid://bbbvx7lmq1rn0" path="res://turret_quick.tscn" id="2_v5fjk"]
 
 [sub_resource type="Environment" id="Environment_dteyu"]

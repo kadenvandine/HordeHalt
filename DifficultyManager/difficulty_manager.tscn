@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfckcbxwo3ma0"]
 
-[ext_resource type="Script" path="res://DifficultyManager/difficulty_manager.gd" id="1_w460b"]
+[ext_resource type="Script" uid="uid://ci3q1meougixg" path="res://DifficultyManager/difficulty_manager.gd" id="1_w460b"]
 
 [node name="DifficultyManager" type="Node"]
 script = ExtResource("1_w460b")

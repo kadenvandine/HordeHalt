@@ -36,4 +36,3 @@ func enemy_defeated() ->  void:
 				return
 		print("you won!")
 		victory_layer.victory()
-

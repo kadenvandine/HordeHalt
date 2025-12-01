@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dajjkhsantum"]
+[gd_scene load_steps=6 format=3 uid="uid://dajjkhsantum"]
 
-[ext_resource type="Script" path="res://DifficultyManager/UserInterface/victory_layer.gd" id="1_n3yxn"]
+[ext_resource type="Script" uid="uid://bwftksuxi6hlc" path="res://DifficultyManager/UserInterface/victory_layer.gd" id="1_n3yxn"]
 [ext_resource type="FontFile" uid="uid://dutp781p7514m" path="res://Assets/Asap/static/Asap-BoldItalic.ttf" id="2_tlcdx"]
-[ext_resource type="Texture2D" uid="uid://db6qwwmrc7jbo" path="res://Assets/star.png" id="2_xnu7g"]
 [ext_resource type="FontFile" uid="uid://5vagwdrxwoct" path="res://Assets/Asap/static/Asap-Bold.ttf" id="4_c2xsn"]
 
 [sub_resource type="Theme" id="Theme_ake75"]
@@ -51,7 +50,6 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_xnu7g")
 expand_mode = 2
 stretch_mode = 5
 
@@ -61,7 +59,6 @@ modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_xnu7g")
 expand_mode = 2
 stretch_mode = 5
 
@@ -71,7 +68,6 @@ modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_xnu7g")
 expand_mode = 2
 stretch_mode = 5
 

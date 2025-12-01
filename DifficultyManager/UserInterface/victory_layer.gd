@@ -16,7 +16,7 @@ func _ready() -> void:
 func victory() -> void:
 	visible = true
 	get_tree().paused = true
-	if base.max_health == base.max_health:
+	if base.max_health == base.current_health:
 		star_2.modulate = Color.WHITE
 		health_label.visible = true
 		failed_health_label.visible = false

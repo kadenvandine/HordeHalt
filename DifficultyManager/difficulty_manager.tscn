@@ -1,23 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfckcbxwo3ma0"]
+[gd_scene load_steps=2 format=3 uid="uid://cfckcbxwo3ma0"]
 
-[ext_resource type="Script" path="res://DifficultyManager/difficulty_manager.gd" id="1_w460b"]
-
-[sub_resource type="Curve" id="Curve_4nj0t"]
-min_value = 0.25
-max_value = 3.0
-_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1, 0.25), -6.70272, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_xxqly"]
-min_value = 10.0
-max_value = 150.0
-_data = [Vector2(0, 39.4737), 0.0, 110.526, 0, 1, Vector2(1, 150), 110.526, 0.0, 1, 0]
-point_count = 2
+[ext_resource type="Script" uid="uid://ci3q1meougixg" path="res://DifficultyManager/difficulty_manager.gd" id="1_w460b"]
 
 [node name="DifficultyManager" type="Node"]
 script = ExtResource("1_w460b")
-spawn_time_curve = SubResource("Curve_4nj0t")
-enemy_health_curve = SubResource("Curve_xxqly")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

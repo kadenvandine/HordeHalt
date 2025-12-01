@@ -1,24 +1,24 @@
 [gd_scene load_steps=30 format=3 uid="uid://dsg6g6n7odkku"]
 
-[ext_resource type="Script" path="res://baselevel.gd" id="1_0gb7o"]
+[ext_resource type="Script" uid="uid://cqfxapxf1oga7" path="res://baselevel.gd" id="1_0gb7o"]
 [ext_resource type="PackedScene" uid="uid://d1jgdbq8ej5d1" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_4fr0t"]
 [ext_resource type="MeshLibrary" uid="uid://rqrf7vkd782s" path="res://MeshLibraries/SpaceLibrary.tres" id="1_svbj1"]
 [ext_resource type="PackedScene" uid="uid://biq68l1tkse7h" path="res://pause_menu.tscn" id="2_jx03x"]
 [ext_resource type="PackedScene" uid="uid://n8ct3xk5c4vc" path="res://Enemy/enemy.tscn" id="2_lhh3q"]
-[ext_resource type="Script" path="res://EnemyPath.gd" id="3_ckvxq"]
+[ext_resource type="Script" uid="uid://bqm3tmthk66x7" path="res://EnemyPath.gd" id="3_ckvxq"]
 [ext_resource type="PackedScene" uid="uid://ba5162yegmh4r" path="res://base/base.tscn" id="3_ln1i7"]
 [ext_resource type="Material" uid="uid://b3080baa7rcmb" path="res://ghost_can_build.tres" id="4_mxdo1"]
 [ext_resource type="Material" uid="uid://cav1gmv57yyab" path="res://ghost_cannot_build.tres" id="5_5bd5a"]
-[ext_resource type="Script" path="res://TurretManager.gd" id="5_15vcq"]
+[ext_resource type="Script" uid="uid://dke8q0yo2wbbr" path="res://TurretManager.gd" id="5_15vcq"]
 [ext_resource type="PackedScene" uid="uid://ci0tkpy016cyt" path="res://turret/turret.tscn" id="6_dkexh"]
 [ext_resource type="PackedScene" uid="uid://bbbvx7lmq1rn0" path="res://turret_quick.tscn" id="8_nuyta"]
 [ext_resource type="FontFile" uid="uid://dutp781p7514m" path="res://Assets/Asap/static/Asap-BoldItalic.ttf" id="8_qvjmv"]
-[ext_resource type="Script" path="res://Bank.gd" id="8_rtyvm"]
+[ext_resource type="Script" uid="uid://050usdj1y2ok" path="res://Bank.gd" id="8_rtyvm"]
 [ext_resource type="PackedScene" uid="uid://cfckcbxwo3ma0" path="res://DifficultyManager/difficulty_manager.tscn" id="9_fmh2w"]
 [ext_resource type="PackedScene" uid="uid://dajjkhsantum" path="res://DifficultyManager/UserInterface/victory_layer.tscn" id="10_cnq5y"]
 [ext_resource type="PackedScene" uid="uid://crpw67q5yagc1" path="res://DifficultyManager/UserInterface/defeat_layer.tscn" id="12_uijrt"]
 [ext_resource type="PackedScene" uid="uid://djwfvcb6uw1ol" path="res://DifficultyManager/UserInterface/game_layer.tscn" id="14_6hptv"]
-[ext_resource type="Script" path="res://GameSettings.gd" id="17_lnkyr"]
+[ext_resource type="Script" uid="uid://d0flo4xr2ojg2" path="res://GameSettings.gd" id="17_lnkyr"]
 [ext_resource type="PackedScene" uid="uid://tgjo3egxar5h" path="res://tutorial_layer.tscn" id="18_u3sip"]
 [ext_resource type="PackedScene" uid="uid://c0yvy5xbj3unx" path="res://main_menu.tscn" id="20_xr7dw"]
 
@@ -106,6 +106,7 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
+path_rotation_accurate = false
 path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
@@ -120,6 +121,7 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
+path_rotation_accurate = false
 path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
@@ -133,6 +135,7 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
+path_rotation_accurate = false
 path_local = true
 path_continuous_u = true
 path_u_distance = 1.0

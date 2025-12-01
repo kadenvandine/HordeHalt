@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://tgjo3egxar5h"]
 
-[ext_resource type="Script" path="res://TutorialManager.gd" id="1_6rdc0"]
+[ext_resource type="Script" uid="uid://dennlm6yr8ohc" path="res://TutorialManager.gd" id="1_6rdc0"]
 
 [node name="TutorialLayer" type="CanvasLayer"]
 process_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://crpw67q5yagc1"]
 
-[ext_resource type="Script" path="res://DifficultyManager/UserInterface/defeat_layer.gd" id="1_fpbka"]
+[ext_resource type="Script" uid="uid://b01ru28l47vtm" path="res://DifficultyManager/UserInterface/defeat_layer.gd" id="1_fpbka"]
 [ext_resource type="FontFile" uid="uid://dutp781p7514m" path="res://Assets/Asap/static/Asap-BoldItalic.ttf" id="1_vg83d"]
 [ext_resource type="FontFile" uid="uid://5vagwdrxwoct" path="res://Assets/Asap/static/Asap-Bold.ttf" id="3_3loj3"]
 

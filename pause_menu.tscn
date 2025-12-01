@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://biq68l1tkse7h"]
 
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_q5yad"]
+[ext_resource type="Script" uid="uid://dbghplx30e7w6" path="res://pause_menu.gd" id="1_q5yad"]
 [ext_resource type="FontFile" uid="uid://cg5vqmhujks6l" path="res://Assets/Asap/static/Asap-ExtraBoldItalic.ttf" id="2_4el0l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wmjv"]

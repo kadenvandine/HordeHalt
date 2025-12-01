@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1jgdbq8ej5d1"]
 
-[ext_resource type="Script" path="res://RayPickerCamera/ray_picker_camera.gd" id="1_w6wk8"]
+[ext_resource type="Script" uid="uid://blcfkgo7sp0rv" path="res://RayPickerCamera/ray_picker_camera.gd" id="1_w6wk8"]
 [ext_resource type="AudioStream" uid="uid://bnd5oiksjts0p" path="res://Assets/audio/148904__timgormly__door-close2.wav" id="2_mgngr"]
 [ext_resource type="AudioStream" uid="uid://dlj5e71fs3ijw" path="res://Assets/audio/657939__lilmati__retro-scifi-laser-sword-unsheathed.wav" id="3_kdsal"]
 

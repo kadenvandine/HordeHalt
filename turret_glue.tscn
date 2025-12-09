@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsx75x4n8iwox"]
+[gd_scene load_steps=9 format=3 uid="uid://dsx75x4n8iwox"]
 
 [ext_resource type="Script" uid="uid://cxl00anqjqklf" path="res://turret_quick.gd" id="1_syk1j"]
 [ext_resource type="PackedScene" uid="uid://bya01e7nmqedt" path="res://turret/projectile.tscn" id="2_8bwbp"]
 [ext_resource type="PackedScene" uid="uid://csokikhjwwdoh" path="res://Assets/GLB format/weapon-turret.glb" id="3_cyobx"]
-[ext_resource type="PackedScene" uid="uid://dragre3qltqak" path="res://Assets/GLB format/tower-square-build-a.glb" id="4_w5p8w"]
 [ext_resource type="PackedScene" uid="uid://b2xuyi7xtrs5k" path="res://Assets/GLB format/Turret.glb" id="5_4kgtc"]
 [ext_resource type="AudioStream" uid="uid://bbd58xq4g1i81" path="res://Assets/audio/36542__djvtripin__backup-6-22-07.wav" id="6_nm7uy"]
 
@@ -68,12 +67,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_4yfqt")
 }
 
-[node name="PurpleTower" parent="." instance=ExtResource("4_w5p8w")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
-visible = false
-
 [node name="Root Scene" parent="." instance=ExtResource("5_4kgtc")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6, 0, 4.5)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="ShootSnd" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_nm7uy")

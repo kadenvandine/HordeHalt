@@ -56,6 +56,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 [node name="Cannon" parent="TurretBase/TurretTop" instance=ExtResource("3_f32ud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.825281, 0)
 
+[node name="Cannon_Weap_001" parent="TurretBase/TurretTop/Cannon" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.97837377)
+transparency = 1.0
+cast_shadow = 0
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
@@ -71,3 +76,5 @@ libraries = {
 stream = ExtResource("5_xqb2p")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="TurretBase/TurretTop/Cannon"]

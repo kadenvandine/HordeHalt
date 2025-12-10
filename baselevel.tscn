@@ -167,6 +167,7 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 script = ExtResource("8_rtyvm")
+starting_gold = 15000000000
 
 [node name="Label" type="Label" parent="Bank"]
 layout_mode = 2

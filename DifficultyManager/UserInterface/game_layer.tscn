@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djwfvcb6uw1ol"]
+[gd_scene load_steps=5 format=3 uid="uid://djwfvcb6uw1ol"]
 
 [ext_resource type="Script" uid="uid://cykpvs8p176sm" path="res://DifficultyManager/UserInterface/game_layer.gd" id="1_38rd5"]
 [ext_resource type="Texture2D" uid="uid://bq5v2q5pgsdan" path="res://Assets/Turret.png" id="1_wwwkl"]
 [ext_resource type="Texture2D" uid="uid://b25qx6vpxp1qv" path="res://Assets/QuickTurret.png" id="2_ttsd3"]
+[ext_resource type="Texture2D" uid="uid://bsi0723uw7k58" path="res://Assets/FlameTurret.png" id="4_tc7wm"]
 
 [node name="GameLayer" type="CanvasLayer"]
 script = ExtResource("1_38rd5")
@@ -43,6 +44,14 @@ expand_icon = true
 layout_mode = 2
 text = "Quickfire Turret"
 icon = ExtResource("2_ttsd3")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Flame Turret" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "  Flame Turret  "
+icon = ExtResource("4_tc7wm")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true

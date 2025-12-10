@@ -5,6 +5,8 @@ extends CanvasLayer
 
 @export var turret_button: Button
 @export var quickfire_turret_button: Button
+@export var flame_turret_button: Button
+@export var ray_picker_camera: Camera3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,12 +19,23 @@ func _ready():
 	if quickfire_turret_button:
 		quickfire_turret_button.mouse_entered.connect(_on_quickfire_turret_mouse_entered)
 		quickfire_turret_button.mouse_exited.connect(_on_mouse_exited)
+	
+	if flame_turret_button:
+		flame_turret_button.pressed.connect(ray_picker_camera._on_build_turret_flame_pressed)
+		flame_turret_button.mouse_entered.connect(_on_flame_turret_mouse_entered)
+		flame_turret_button.mouse_exited.connect(_on_mouse_exited)
 
 func _process(delta):
 	if get_tree().is_paused():
 		return
 	if stats_tooltip.visible:
 		stats_tooltip.global_position = get_viewport().get_mouse_position() + Vector2(15, 15)
+
+func _on_flame_turret_mouse_entered():
+	if get_tree().is_paused():
+		return
+	stats_label.text = FLAME_TURRET_STATS_TEXT
+	stats_tooltip.visible = true
 
 
 func _on_turret_mouse_entered():
@@ -59,4 +72,13 @@ Quickfire Turret
 • Reload Speed: 0.55s
 • Range: 6
 • Cost: 150
+"""
+
+const FLAME_TURRET_STATS_TEXT = """
+Flame Turret
+• Damage: XXXXXXX
+• Fire damage: 2/tick
+• Duration: 2.0s
+• Range: 5
+• Cost: 125
 """

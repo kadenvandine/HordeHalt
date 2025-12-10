@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://cae6vo7ugfhun"]
+
+[ext_resource type="Script" uid="uid://kws6ugf1o63" path="res://flame_vfx.gd" id="1_ceoom"]
+
+[sub_resource type="Gradient" id="Gradient_ceoom"]
+offsets = PackedFloat32Array(0, 0.23584905, 0.5849057, 1)
+colors = PackedColorArray(0.8156863, 0, 0, 1, 0.8627451, 0.8117647, 0, 1, 0.8589912, 0.36707193, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ac64w"]
+gradient = SubResource("Gradient_ceoom")
+
+[sub_resource type="Curve" id="Curve_qmjmp"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 141.252, 0, 0, Vector2(1, 1), 164.79868, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oq22u"]
+curve = SubResource("Curve_qmjmp")
+
+[sub_resource type="Curve" id="Curve_mu5ie"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.34848487, 1), -1.168539, -1.168539, 0, 0, Vector2(1, 0), -0.06311259, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_73try"]
+curve = SubResource("Curve_mu5ie")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_13d0y"]
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_curve = SubResource("CurveTexture_oq22u")
+scale_curve = SubResource("CurveTexture_73try")
+color = Color(0.848519, 0.59043247, 0, 1)
+color_ramp = SubResource("GradientTexture1D_ac64w")
+
+[sub_resource type="QuadMesh" id="QuadMesh_oapve"]
+
+[node name="FlameVFX" type="Node3D"]
+script = ExtResource("1_ceoom")
+
+[node name="Particles" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 170
+lifetime = 0.5
+speed_scale = 0.0
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_13d0y")
+draw_pass_1 = SubResource("QuadMesh_oapve")
+
+[node name="Timer" type="Timer" parent="."]

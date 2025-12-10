@@ -7,9 +7,11 @@ signal turret_placed
 @export var turret_manager: Node3D
 @export var turret_cost := 100
 @export var quick_turret_cost := 150
+@export var turret_flame_cost := 125
 
 @export var turret_scene: PackedScene
 @export var turret_quick_scene: PackedScene
+@export var turret_flame_scene: PackedScene
 @export var ghost_material_can_build: StandardMaterial3D
 @export var ghost_material_cannot_build: StandardMaterial3D
 var _ghost_turret: Node3D = null
@@ -23,7 +25,7 @@ var _ghost_turret: Node3D = null
 var selected_turret_type: String = ""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func                                             _process(delta):
 	if Input.is_action_just_pressed("right_click"):
 		selected_turret_type = ""
 		print("Turret selection cleared")
@@ -44,6 +46,8 @@ func _process(delta):
 		current_cost = turret_cost
 	elif selected_turret_type == "quick":
 		current_cost = quick_turret_cost
+	elif selected_turret_type == "flame":
+		current_cost = turret_flame_cost
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider() is GridMap:
 		_ghost_turret.visible = true
 		
@@ -71,7 +75,10 @@ func _process(delta):
 					turret_manager.build_turret_quick(tile_position)
 					quick_turret_place_snd.play()
 					turret_placed.emit()
-		
+				elif selected_turret_type == "flame":
+					turret_manager.build_turret_flame(tile_position)
+#					flame_turret_place_snd.play()
+					turret_placed.emit()
 		else:
 			_set_ghost_material(_ghost_turret, ghost_material_cannot_build)
 
@@ -84,6 +91,11 @@ func _on_build_turret_pressed():
 func _on_build_turret_quick_pressed():
 	selected_turret_type = "quick"
 	spawn_ghost_turret(turret_quick_scene)
+	turret_button_pressed.emit()
+	
+func _on_build_turret_flame_pressed():
+	selected_turret_type = "flame"
+	spawn_ghost_turret(turret_flame_scene)
 	turret_button_pressed.emit()
 	
 	

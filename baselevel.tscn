@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dsg6g6n7odkku"]
+[gd_scene load_steps=31 format=3 uid="uid://dsg6g6n7odkku"]
 
 [ext_resource type="Script" uid="uid://cqfxapxf1oga7" path="res://baselevel.gd" id="1_0gb7o"]
 [ext_resource type="PackedScene" uid="uid://d1jgdbq8ej5d1" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_4fr0t"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ba5162yegmh4r" path="res://base/base.tscn" id="3_ln1i7"]
 [ext_resource type="Material" uid="uid://b3080baa7rcmb" path="res://ghost_can_build.tres" id="4_mxdo1"]
 [ext_resource type="Material" uid="uid://cav1gmv57yyab" path="res://ghost_cannot_build.tres" id="5_5bd5a"]
-[ext_resource type="Script" path="res://TurretManager.gd" id="5_15vcq"]
+[ext_resource type="Script" uid="uid://dke8q0yo2wbbr" path="res://TurretManager.gd" id="5_15vcq"]
 [ext_resource type="PackedScene" uid="uid://ci0tkpy016cyt" path="res://turret/turret.tscn" id="6_dkexh"]
 [ext_resource type="PackedScene" uid="uid://bbbvx7lmq1rn0" path="res://turret_quick.tscn" id="8_nuyta"]
 [ext_resource type="FontFile" uid="uid://dutp781p7514m" path="res://Assets/Asap/static/Asap-BoldItalic.ttf" id="8_qvjmv"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cfckcbxwo3ma0" path="res://DifficultyManager/difficulty_manager.tscn" id="9_fmh2w"]
 [ext_resource type="PackedScene" uid="uid://dajjkhsantum" path="res://DifficultyManager/UserInterface/victory_layer.tscn" id="10_cnq5y"]
 [ext_resource type="PackedScene" uid="uid://crpw67q5yagc1" path="res://DifficultyManager/UserInterface/defeat_layer.tscn" id="12_uijrt"]
+[ext_resource type="PackedScene" uid="uid://gnoahc8kqwnc" path="res://turret_flame.tscn" id="13_2418w"]
 [ext_resource type="PackedScene" uid="uid://djwfvcb6uw1ol" path="res://DifficultyManager/UserInterface/game_layer.tscn" id="14_6hptv"]
 [ext_resource type="Script" uid="uid://d0flo4xr2ojg2" path="res://GameSettings.gd" id="17_lnkyr"]
 [ext_resource type="PackedScene" uid="uid://tgjo3egxar5h" path="res://tutorial_layer.tscn" id="18_u3sip"]
@@ -77,8 +78,6 @@ material = SubResource("StandardMaterial3D_8y3r6")
 process_mode = 3
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../TurretManager")
-turret_scene = ExtResource("6_dkexh")
-turret_quick_scene = ExtResource("8_nuyta")
 ghost_material_can_build = ExtResource("4_mxdo1")
 ghost_material_cannot_build = ExtResource("5_5bd5a")
 
@@ -152,6 +151,7 @@ defeat_layer = NodePath("../DefeatLayer")
 script = ExtResource("5_15vcq")
 turret = ExtResource("6_dkexh")
 turret_quick = ExtResource("8_nuyta")
+turret_flame = ExtResource("13_2418w")
 enemy_path = NodePath("../EnemyPath")
 
 [node name="Bank" type="MarginContainer" parent="." groups=["bank"]]
@@ -183,10 +183,12 @@ visible = false
 
 [node name="DefeatLayer" parent="." instance=ExtResource("12_uijrt")]
 
-[node name="GameLayer" parent="." node_paths=PackedStringArray("turret_button", "quickfire_turret_button") instance=ExtResource("14_6hptv")]
+[node name="GameLayer" parent="." node_paths=PackedStringArray("turret_button", "quickfire_turret_button", "flame_turret_button", "ray_picker_camera") instance=ExtResource("14_6hptv")]
 process_mode = 3
 turret_button = NodePath("MarginContainer/PanelContainer/HBoxContainer/Turret")
 quickfire_turret_button = NodePath("MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret")
+flame_turret_button = NodePath("MarginContainer/PanelContainer/HBoxContainer/Flame Turret")
+ray_picker_camera = NodePath("../RayPickerCamera")
 
 [node name="GameSettings" type="Node" parent="."]
 script = ExtResource("17_lnkyr")

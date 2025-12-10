@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://gnoahc8kqwnc"]
+[gd_scene load_steps=9 format=3 uid="uid://gnoahc8kqwnc"]
 
 [ext_resource type="Script" uid="uid://cbwxokk8ndm85" path="res://turret_flame.gd" id="1_0c68v"]
+[ext_resource type="PackedScene" uid="uid://74k1c1nsv2ww" path="res://FlameVFX.tscn" id="2_2fs8p"]
 [ext_resource type="PackedScene" uid="uid://dlhby46imux54" path="res://Assets/Cannon.glb" id="3_f32ud"]
 [ext_resource type="PackedScene" uid="uid://drk1ib01248mo" path="res://Assets/GLB format/tower-round-build-f.glb" id="4_x56a2"]
 [ext_resource type="AudioStream" uid="uid://b1lqunsb5sqju" path="res://Assets/audio/441373__lilmati__heavy-artillery-shot.wav" id="5_xqb2p"]
@@ -44,6 +45,7 @@ _data = {
 
 [node name="turret_flame" type="Node3D"]
 script = ExtResource("1_0c68v")
+flame_vfx_scene = ExtResource("2_2fs8p")
 
 [node name="TurretBase" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -53,7 +55,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
 [node name="Cannon" parent="TurretBase/TurretTop" instance=ExtResource("3_f32ud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.825281, 0)
-visible = false
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

@@ -76,6 +76,7 @@ material = SubResource("StandardMaterial3D_8y3r6")
 
 [node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("1_4fr0t")]
 process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 0.4226182, 0.90630776, 0, -0.90630776, 0.4226182, 0, 14.5, 9.5)
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../TurretManager")
 ghost_material_can_build = ExtResource("4_mxdo1")

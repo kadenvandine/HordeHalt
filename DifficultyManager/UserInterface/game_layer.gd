@@ -76,9 +76,10 @@ Quickfire Turret
 
 const FLAME_TURRET_STATS_TEXT = """
 Flame Turret
-• Damage: XXXXXXX
 • Fire damage: 2/tick
-• Duration: 2.0s
+• Fire rate: 0.1
+• Duration: 6.0s
 • Range: 5
+• Spread: 6.25
 • Cost: 125
 """

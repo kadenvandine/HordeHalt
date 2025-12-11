@@ -19,10 +19,6 @@ func build_turret_quick(turret_position: Vector3) -> void:
 	new_turret.enemy_path = enemy_path
 
 func build_turret_flame(turret_position: Vector3) -> void:
-	if not turret_flame:
-		print("ERROR: Flame Turret Scene not assigned in TurretManager!")
-		return
-	
 	var new_turret = turret_flame.instantiate()
 	add_child(new_turret)
 	new_turret.global_position = turret_position

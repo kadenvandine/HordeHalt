@@ -20,6 +20,8 @@ var _ghost_turret: Node3D = null
 @onready var bank = get_tree().get_first_node_in_group("bank")
 @onready var quick_turret_place_snd = $QuickTurretPlaceSnd
 @onready var normal_turret_place_snd = $NormalTurretPlaceSnd
+@onready var flame_turret_place_snd = $FlameTurretPlaceSnd
+
 
 
 var selected_turret_type: String = ""
@@ -77,7 +79,7 @@ func                                             _process(delta):
 					turret_placed.emit()
 				elif selected_turret_type == "flame":
 					turret_manager.build_turret_flame(tile_position)
-#					flame_turret_place_snd.play()
+					flame_turret_place_snd.play()
 					turret_placed.emit()
 		else:
 			_set_ghost_material(_ghost_turret, ghost_material_cannot_build)

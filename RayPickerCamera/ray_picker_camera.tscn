@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1jgdbq8ej5d1"]
+[gd_scene load_steps=8 format=3 uid="uid://d1jgdbq8ej5d1"]
 
 [ext_resource type="Script" uid="uid://blcfkgo7sp0rv" path="res://RayPickerCamera/ray_picker_camera.gd" id="1_w6wk8"]
 [ext_resource type="PackedScene" uid="uid://ci0tkpy016cyt" path="res://turret/turret.tscn" id="2_ct34j"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dlj5e71fs3ijw" path="res://Assets/audio/657939__lilmati__retro-scifi-laser-sword-unsheathed.wav" id="3_kdsal"]
 [ext_resource type="PackedScene" uid="uid://bbbvx7lmq1rn0" path="res://turret_quick.tscn" id="3_ytooq"]
 [ext_resource type="PackedScene" uid="uid://gnoahc8kqwnc" path="res://turret_flame.tscn" id="4_388nt"]
+[ext_resource type="AudioStream" uid="uid://b1y5g5ccn0g1l" path="res://Assets/audio/magical-rock-spell-190273.mp3" id="7_ytooq"]
 
 [node name="RayPickerCamera" type="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 14.5, 9.5)
@@ -22,3 +23,6 @@ stream = ExtResource("2_mgngr")
 
 [node name="QuickTurretPlaceSnd" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kdsal")
+
+[node name="FlameTurretPlaceSnd" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ytooq")

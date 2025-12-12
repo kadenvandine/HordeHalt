@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://74k1c1nsv2ww" path="res://FlameVFX.tscn" id="2_2fs8p"]
 [ext_resource type="PackedScene" uid="uid://dlhby46imux54" path="res://Assets/Cannon.glb" id="3_f32ud"]
 [ext_resource type="PackedScene" uid="uid://drk1ib01248mo" path="res://Assets/GLB format/tower-round-build-f.glb" id="4_x56a2"]
-[ext_resource type="AudioStream" uid="uid://b1lqunsb5sqju" path="res://Assets/audio/441373__lilmati__heavy-artillery-shot.wav" id="5_xqb2p"]
+[ext_resource type="AudioStream" uid="uid://cl7bjhu6vfcnn" path="res://Assets/audio/dragon-breathes-fire-3-191459.mp3" id="5_2fs8p"]
 
 [sub_resource type="Animation" id="Animation_83qd5"]
 length = 0.001
@@ -45,6 +45,7 @@ _data = {
 
 [node name="turret_flame" type="Node3D"]
 script = ExtResource("1_0c68v")
+flame_duration = 6.0
 flame_vfx_scene = ExtResource("2_2fs8p")
 
 [node name="TurretBase" type="Node3D" parent="."]
@@ -73,7 +74,7 @@ libraries = {
 }
 
 [node name="ShootSnd" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_xqb2p")
+stream = ExtResource("5_2fs8p")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 

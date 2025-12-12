@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ci0tkpy016cyt"]
 
-[ext_resource type="Script" uid="uid://ygr6jd8g8a03" path="res://turret/turret.gd" id="1_2r36l"]
+[ext_resource type="Script" path="res://turret/turret.gd" id="1_2r36l"]
 [ext_resource type="PackedScene" uid="uid://bya01e7nmqedt" path="res://turret/projectile.tscn" id="1_xydhu"]
 [ext_resource type="PackedScene" uid="uid://dlhby46imux54" path="res://Assets/Cannon.glb" id="3_km1eq"]
 [ext_resource type="PackedScene" uid="uid://db6qwwmrc7jbo" path="res://Assets/TurretBase.glb" id="4_37qln"]
@@ -68,5 +68,6 @@ libraries = {
 
 [node name="ShootSnd" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_tdpqc")
+volume_db = -5.04
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

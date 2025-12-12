@@ -23,6 +23,8 @@ stream = ExtResource("2_mgngr")
 
 [node name="QuickTurretPlaceSnd" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kdsal")
+volume_db = -3.01
 
 [node name="FlameTurretPlaceSnd" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ytooq")
+volume_db = -6.445

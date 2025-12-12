@@ -53,13 +53,19 @@ func _physics_process(delta: float) -> void:
 	
 	if target:
 		turret_base.look_at(target.global_position, Vector3.UP, true)
+		
 		if flame_particles and not flame_particles.emitting:
 			flame_particles.emitting = true
-			if not shoot_snd.playing: shoot_snd.play()
+			
+		if not shoot_snd.playing:
+			shoot_snd.play()
+			
 	else:
 		if flame_particles and flame_particles.emitting:
 			flame_particles.emitting = false
-			shoot_snd.stop() 
+		
+		if shoot_snd.playing:
+			shoot_snd.stop()
 
 func _on_timer_timeout():
 	target = find_best_target()

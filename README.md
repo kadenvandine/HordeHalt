@@ -11,7 +11,7 @@ Ugh, more barbarians? Teach these party crashers some manners with strategically
 * **Build Your Defenses:** Place multiple types of unique turrets.
 * **Dynamic Enemies:** Face off against barbarians, beware, they grow stronger with each second.
 * **Difficulty Scaling:** Choose from Easy, Normal, or Hard modes that change enemy health and spawn rates.
-* **Three Minute Frenzy:**  The wave lasts for three minutes, can you survive?
+* **Two Minute Frenzy:**  The wave lasts for three minutes, can you survive?
 
 ## ⌨️ Controls
 
@@ -48,7 +48,7 @@ If you want to run the game from the source code, you'll need the Godot Engine.
 ## 🤝 Contributing
 
 We'd love to have your help! If you'd like to contribute, please feel free to fork the repository, make your changes, and submit a pull request. If you find a bug, you can report it on the [Issues](https://github.com/kadenvandine/HordeHalt/issues) page.
-
+a
 ## 📜 Credits
 
 * **[Kaden VanDine]** - Lead Developer

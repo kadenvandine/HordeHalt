@@ -34,4 +34,6 @@ func _on_play_pressed():
 			turret_button.disabled = false
 		if is_instance_valid(quick_turret_button):
 			quick_turret_button.disabled = false
+		if is_instance_valid(flame_turret_button):
+			flame_turret_button.disabled = false
 	queue_free()

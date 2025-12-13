@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Horde Halt"
 config/description="Ugh, more barbarians? Teach these party crashers some manners with strategically placed turrets and a whole lot of 'NOPE.' You're the bouncer, and these guys are not on the list."
+config/version="0.0.2.0"
 run/main_scene="res://baselevel.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/image="res://shadowninjagames.png"

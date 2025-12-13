@@ -6,6 +6,7 @@ extends CanvasLayer
 @export var game_scene_path := "res://baselevel.tscn"
 @export var turret_button: Button
 @export var quick_turret_button: Button
+@export var flame_turret_button: Button
 
 func _ready():
 	difficulty_dropdown.add_item("Easy", 0)
@@ -20,6 +21,8 @@ func _ready():
 		turret_button.disabled = true
 	if is_instance_valid(quick_turret_button):
 		quick_turret_button.disabled = true
+	if is_instance_valid(flame_turret_button):
+		flame_turret_button.disabled = true
 	
 func _on_difficulty_selected(index: int):
 	GameSettings.set_difficulty_index(index)

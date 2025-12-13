@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var flame_range := 5.0
-@export var flame_damage_per_tick := 2
+@export var flame_damage_per_tick := 2.5
 @export var flame_duration := 4.0
 @export var fire_rate := 0.1
 

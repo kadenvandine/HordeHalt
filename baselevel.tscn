@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dsg6g6n7odkku"]
+[gd_scene load_steps=34 format=3 uid="uid://dsg6g6n7odkku"]
 
 [ext_resource type="Script" uid="uid://cqfxapxf1oga7" path="res://baselevel.gd" id="1_0gb7o"]
 [ext_resource type="PackedScene" uid="uid://d1jgdbq8ej5d1" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_4fr0t"]
@@ -22,6 +22,8 @@
 [ext_resource type="Script" uid="uid://d0flo4xr2ojg2" path="res://GameSettings.gd" id="17_lnkyr"]
 [ext_resource type="PackedScene" uid="uid://tgjo3egxar5h" path="res://tutorial_layer.tscn" id="18_u3sip"]
 [ext_resource type="PackedScene" uid="uid://c0yvy5xbj3unx" path="res://main_menu.tscn" id="20_xr7dw"]
+[ext_resource type="FontFile" uid="uid://dsini0dqmlim3" path="res://Assets/Asap/static/Asap_SemiExpanded-Black.ttf" id="23_10ut0"]
+[ext_resource type="Script" uid="uid://dnt5djco7hxkv" path="res://timer_label.gd" id="24_qabpw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3corq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -58,6 +60,10 @@ font_color = Color(0.984314, 0.772549, 0.352941, 1)
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_sfbjf"]
+font = ExtResource("23_10ut0")
+font_size = 80
+
 [node name="BaseLevel" type="Node3D"]
 script = ExtResource("1_0gb7o")
 pause_menu_scene = ExtResource("2_jx03x")
@@ -79,6 +85,7 @@ process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 0.4226182, 0.90630776, 0, -0.90630776, 0.4226182, 0, 14.5, 9.5)
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../TurretManager")
+turret_flame_cost = 200
 ghost_material_can_build = ExtResource("4_mxdo1")
 ghost_material_cannot_build = ExtResource("5_5bd5a")
 
@@ -168,7 +175,7 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 script = ExtResource("8_rtyvm")
-starting_gold = 15000000000
+starting_gold = 100
 
 [node name="Label" type="Label" parent="Bank"]
 layout_mode = 2
@@ -178,7 +185,7 @@ text = "Gold: "
 label_settings = SubResource("LabelSettings_gghht")
 
 [node name="DifficultyManager" parent="." instance=ExtResource("9_fmh2w")]
-game_length = 180.0
+game_length = 122.0
 
 [node name="VictoryLayer" parent="." instance=ExtResource("10_cnq5y")]
 visible = false
@@ -195,14 +202,26 @@ ray_picker_camera = NodePath("../RayPickerCamera")
 [node name="GameSettings" type="Node" parent="."]
 script = ExtResource("17_lnkyr")
 
-[node name="TutorialLayer" parent="." node_paths=PackedStringArray("ray_picker_camera", "build_turret_button", "quick_turret_button") instance=ExtResource("18_u3sip")]
+[node name="TutorialLayer" parent="." node_paths=PackedStringArray("ray_picker_camera", "build_turret_button", "quick_turret_button", "flame_turret_button") instance=ExtResource("18_u3sip")]
 ray_picker_camera = NodePath("../RayPickerCamera")
 build_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret")
 quick_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret")
+flame_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Flame Turret")
 
-[node name="MainMenu" parent="." node_paths=PackedStringArray("turret_button", "quick_turret_button") instance=ExtResource("20_xr7dw")]
+[node name="MainMenu" parent="." node_paths=PackedStringArray("turret_button", "quick_turret_button", "flame_turret_button") instance=ExtResource("20_xr7dw")]
 turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Turret")
 quick_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Quickfire Turret")
+flame_turret_button = NodePath("../GameLayer/MarginContainer/PanelContainer/HBoxContainer/Flame Turret")
+
+[node name="GameTimer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="GameTimer" node_paths=PackedStringArray("difficulty_manager")]
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 85.0
+label_settings = SubResource("LabelSettings_sfbjf")
+script = ExtResource("24_qabpw")
+difficulty_manager = NodePath("../../DifficultyManager")
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
 [connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]

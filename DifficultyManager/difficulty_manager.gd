@@ -26,3 +26,6 @@ func get_enemy_speed() -> float:
 
 func _on_timer_timeout():
 	stop_spawning_enemies.emit()
+
+func get_time_left() -> float:
+	return timer.time_left
